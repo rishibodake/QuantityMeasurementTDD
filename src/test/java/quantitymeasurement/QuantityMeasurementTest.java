@@ -54,4 +54,13 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(false);
     }
 
+    //Test For Conversion Feet To Inches
+    @Test
+    public void given0FeetAnd0Inches_whenCompare_shouldReturnTrue(){
+        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        boolean check = valueInFeet.checkCompare(valueInInches);
+        Assert.assertTrue(check);
+    }
+
 }

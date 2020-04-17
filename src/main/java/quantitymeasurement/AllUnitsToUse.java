@@ -7,6 +7,15 @@ public class AllUnitsToUse {
                 return length * 12;
             }
         },
-        INCHES;
-    }
-    }
+        INCHES {
+            public double convertToInches(double length) {
+                return length;
+            }
+        };
+        public double convertToInches(double length) {
+            return 0.0;
+        }
+        }
+}
+
+
