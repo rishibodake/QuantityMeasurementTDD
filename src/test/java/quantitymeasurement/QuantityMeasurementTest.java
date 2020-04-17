@@ -113,4 +113,12 @@ public class QuantityMeasurementTest {
         Length value2InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,0.0);
         Assert.assertEquals(value1InYards,value2InYards);
     }
+
+    //Test For Equal Quantity but Different values
+    @Test
+    public void givenValuesIn0yardAnd1yardValues_ShouldReturnFalse() {
+        Length value1InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,0.0);
+        Length value2InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
+        Assert.assertNotEquals(value1InYards, value2InYards);
+    }
 }
