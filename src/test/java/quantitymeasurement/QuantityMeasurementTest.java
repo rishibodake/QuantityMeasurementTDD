@@ -30,4 +30,12 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(false);
     }
 
+    //Test For 0 inches and 0 inches
+    @Test
+    public void given0InchesAnd0Inches_shouldReturnTrue(){
+        Length valueInInches1 = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        Length valueInInches2 = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        Assert.assertEquals(valueInInches1,valueInInches2);
+    }
+
 }

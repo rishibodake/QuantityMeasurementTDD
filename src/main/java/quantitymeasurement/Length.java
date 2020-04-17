@@ -4,8 +4,10 @@ package quantitymeasurement;
 
 public class Length {
     private final double valueOfFeet;
+    private final AllUnitsToUse.UnitConverter unit;
 
     public Length(quantitymeasurement.AllUnitsToUse.UnitConverter  unit, double valueOfFeet) {
+        this.unit = unit;
         this.valueOfFeet = valueOfFeet;
     }
 

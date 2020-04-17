@@ -6,6 +6,7 @@ public class AllUnitsToUse {
             public double convertToInches(double length) {
                 return length * 12;
             }
-        }
+        },
+        INCHES;
     }
-}
+    }
