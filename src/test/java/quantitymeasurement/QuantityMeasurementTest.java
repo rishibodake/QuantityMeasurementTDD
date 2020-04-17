@@ -2,30 +2,31 @@ package quantitymeasurement;
 
 import org.junit.Assert;
 import org.junit.Test;
+import quantitymeasurement.AllUnitsToUse;
 
 public class QuantityMeasurementTest {
 
     //TestCase 1
     @Test
     public void given0FeetAnd0Feet_whenCompare_shouldReturnEqual(){
-      Feet feetValue1 = new Feet(0.0);
-      Feet feetValue2 = new Feet(0.0);
-      Assert.assertEquals(feetValue1,feetValue2);
+      Length lengthValue1 = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+      Length lengthValue2 = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+      Assert.assertEquals(lengthValue1, lengthValue2);
     }
 
     //TestCase For Unequal Objects
     @Test
     public void givenValueZeroAndOneFeet_shouldReturnFalse(){
-        Feet feetValue1 = new Feet(0.0);
-        Feet feetValue2 = new Feet(1.0);
-        Assert.assertNotEquals(feetValue1,feetValue2);
+        Length lengthValue1 = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+        Length lengthValue2 = new Length(AllUnitsToUse.UnitConverter.FEET,1.0);
+        Assert.assertNotEquals(lengthValue1, lengthValue2);
     }
 
     //Test For Null and Value
     @Test
     public void givenNullAndOneValueInFeet_shouldReturnFalse(){
-        Feet feetValue1 = new Feet(3.00);
-        feetValue1.equals(null);
+        Length lengthValue1 = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+        lengthValue1.equals(null);
         Assert.assertFalse(false);
     }
 
