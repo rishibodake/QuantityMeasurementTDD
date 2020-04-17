@@ -12,7 +12,11 @@ public class AllUnitsToUse {
                 return length;
             }
         },
-        YARDS;
+        YARDS {
+            public double convertToInches(double length) {
+                return length * 3 * 12;
+            }
+        };
 
 
         public double convertToInches(double length) {
