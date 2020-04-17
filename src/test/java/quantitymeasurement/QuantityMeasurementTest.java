@@ -108,7 +108,7 @@ public class QuantityMeasurementTest {
 
     //Test For Feet To yard
     @Test
-    public void given0Feet0Yards_whenCompare_shouldReturnTrue(){
+    public void given0YardsAnd0Yards_whenCompare_shouldReturnTrue(){
         Length value1InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,0.0);
         Length value2InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,0.0);
         Assert.assertEquals(value1InYards,value2InYards);
