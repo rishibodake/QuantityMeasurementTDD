@@ -174,4 +174,13 @@ public class QuantityMeasurementTest {
         boolean check = valueInInches.checkCompare(valueInYards);
         Assert.assertTrue(check);
     }
+
+    //Test For 1 yard is 3 feet
+    @Test
+    public void givenValuesAsOneYardAnd3Feet_whenCompare_ShouldReturnTrue() {
+        Length valueInYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
+        Length valuesInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,3.0);
+        boolean compareCheck = valueInYards.checkCompare(valuesInFeet);
+        Assert.assertTrue(compareCheck);
+    }
 }
