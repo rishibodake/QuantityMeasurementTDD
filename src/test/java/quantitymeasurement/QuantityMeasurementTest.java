@@ -46,4 +46,12 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(valueInInches1,valueInInches2);
     }
 
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInInch_shouldReturnFalse(){
+        Length valueInInche = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+        valueInInche.equals(null);
+        Assert.assertFalse(false);
+    }
+
 }
