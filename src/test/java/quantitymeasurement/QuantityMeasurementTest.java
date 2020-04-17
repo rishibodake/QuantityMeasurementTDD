@@ -15,10 +15,18 @@ public class QuantityMeasurementTest {
 
     //TestCase For Unequal Objects
     @Test
-    public void givenNullValueZeroAndOneFeet_shouldReturnFalse(){
+    public void givenValueZeroAndOneFeet_shouldReturnFalse(){
         Feet feetValue1 = new Feet(0.0);
         Feet feetValue2 = new Feet(1.0);
         Assert.assertNotEquals(feetValue1,feetValue2);
+    }
+
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInFeet_shouldReturnFalse(){
+        Feet feetValue1 = new Feet(3.00);
+        feetValue1.equals(null);
+        Assert.assertFalse(false);
     }
 
 }
