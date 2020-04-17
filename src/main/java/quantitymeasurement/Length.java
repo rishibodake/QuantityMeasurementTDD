@@ -21,8 +21,9 @@ public class Length {
     }
 
     public boolean checkCompare(Length that) {
-        double firstValue = this.unit.FEET.convertToInches(this.value);
-        double secondValue = that.unit.INCHES.convertToInches(that.value);
+        double firstValue = this.unit.convertToInches(this.value);
+        double secondValue = that.unit.convertToInches(that.value);
         return Objects.equals(firstValue, secondValue);
     }
+
 }
