@@ -79,4 +79,5 @@ public class QuantityMeasurementTest {
         boolean check = valueInFeet.checkCompare(valueInInches);
         Assert.assertTrue(check);
     }
+
 }
