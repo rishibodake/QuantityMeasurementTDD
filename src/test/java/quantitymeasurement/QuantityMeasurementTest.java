@@ -156,4 +156,13 @@ public class QuantityMeasurementTest {
         boolean compareCheck = valuesInInch.checkCompare(valueInYards);
         Assert.assertFalse(compareCheck);
     }
+
+    //Test For 1 yards is 36 inches
+    @Test
+    public void given1Yard36Inches_whenCompare_shoulsReturnTrue(){
+        Length valueInYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,36.00);
+        boolean check = valueInYards.checkCompare(valueInInches);
+        Assert.assertTrue(check);
+    }
 }
