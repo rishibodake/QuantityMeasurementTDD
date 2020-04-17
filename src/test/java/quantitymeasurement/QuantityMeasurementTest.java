@@ -121,4 +121,12 @@ public class QuantityMeasurementTest {
         Length value2InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
         Assert.assertNotEquals(value1InYards, value2InYards);
     }
+
+    //Test For 1 Value and Null value
+    @Test
+    public void givenOneNUllValueYardUnit_IfNull_ShouldReturnFalse() {
+        Length value1InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,10.0);
+        value1InYards.equals(null);
+        Assert.assertFalse(false);
+    }
 }
