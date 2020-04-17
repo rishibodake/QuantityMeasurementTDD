@@ -38,4 +38,12 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(valueInInches1,valueInInches2);
     }
 
+    //Test For Two Unequal Objects
+    @Test
+    public void given0InchAnd1Inch_whenCompare_shouldReturnFalse(){
+        Length valueInInches1 = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        Length valueInInches2 = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
+        Assert.assertNotEquals(valueInInches1,valueInInches2);
+    }
+
 }
