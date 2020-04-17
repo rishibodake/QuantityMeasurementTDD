@@ -80,4 +80,12 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(check);
     }
 
+    //Test For 12 Inches is 1 Feet
+    @Test
+    public void given12InchesAnd1Feet_whenCompare_shouldEqualsTrue(){
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,12.0);
+        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.0);
+        boolean check = valueInInches.checkCompare(valueInFeet);
+        Assert.assertTrue(check);
+    }
 }
