@@ -105,4 +105,12 @@ public class QuantityMeasurementTest {
         boolean check = valueInInches.checkCompare(valueInFeet);
         Assert.assertTrue(check);
     }
+
+    //Test For Feet To yard
+    @Test
+    public void given0Feet0Yards_whenCompare_shouldReturnTrue(){
+        Length value1InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,0.0);
+        Length value2InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,0.0);
+        Assert.assertEquals(value1InYards,value2InYards);
+    }
 }
