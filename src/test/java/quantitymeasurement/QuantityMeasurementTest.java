@@ -217,4 +217,12 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(check);
     }
 
+    //Test For 1cm and 1 Inches
+    @Test
+    public void given1CmAnd1Inches_whenCompare_shouldReturnFalse(){
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
+        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,1.0);
+        Assert.assertNotEquals(valueInCm,valueInInches);
+    }
+
 }
