@@ -200,4 +200,12 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(cmValue1, cmValue2);
     }
 
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInCm_shouldReturnFalse(){
+        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
+        valueInCm.equals(null);
+        Assert.assertFalse(false);
+    }
+
 }
