@@ -208,4 +208,13 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(false);
     }
 
+    //Test for 0Cm and 0Inches
+    @Test
+    public void given0InchesAnd0Cm_whenCompare_shouldReturnTrue(){
+        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
+        boolean check = valueInInches.checkCompare(valueInCm);
+        Assert.assertTrue(check);
+    }
+
 }
