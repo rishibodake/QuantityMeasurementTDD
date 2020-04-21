@@ -16,9 +16,13 @@ public class AllUnitsToUse {
             public double convertToInches(double length) {
                 return length * 3 * 12;
             }
+        },
+        CENTIMETER {
+            public double convertToInches(double length) {
+                return length;
+            }
+
         };
-
-
         public double convertToInches(double length) {
             return 0.0;
         }
