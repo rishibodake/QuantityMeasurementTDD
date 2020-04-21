@@ -225,4 +225,13 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(valueInCm,valueInInches);
     }
 
+    //Test TO Compare that 2 in is 5 cm
+    @Test
+    public void given2InchesAnd5Cm_whenCompare_shouldEqualsTrue(){
+        Length valueInFInches = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,5.0);
+        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.INCHES,2.0);
+        boolean check = valueInFInches.checkCompare(valueInCm);
+        Assert.assertTrue(check);
+    }
+
 }

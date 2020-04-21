@@ -19,7 +19,7 @@ public class AllUnitsToUse {
         },
         CENTIMETER {
             public double convertToInches(double length) {
-                return length;
+                return length/2.5;
             }
 
         };
