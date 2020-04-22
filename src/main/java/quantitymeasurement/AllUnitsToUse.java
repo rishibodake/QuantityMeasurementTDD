@@ -32,7 +32,11 @@ public class AllUnitsToUse {
                 return volume;
             }
         },
-        MILILITER;
+        MILILITER{
+            public double convertToInches(double volume) {
+                return volume/1000;
+            }
+        };
 
         public double convertToInches(double quantity) {
             return 0.0;
