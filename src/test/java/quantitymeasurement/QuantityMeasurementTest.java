@@ -345,5 +345,16 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(check);
     }
 
+    //Test For Conversion Gallon to Liter
+    @Test
+    public void given1GallonAnd3point78Liter_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,3.785);
+        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
+        boolean check = valueInLiter.checkCompare(valueInGallon);
+        Assert.assertTrue(check);
+    }
+
+
+
 
 }
