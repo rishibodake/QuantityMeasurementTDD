@@ -21,8 +21,8 @@ public class AllUnitsToUse {
             public double convertToInches(double length) {
                 return length/2.5;
             }
-
-        };
+        },
+        GALLON;
         public double convertToInches(double length) {
             return 0.0;
         }
