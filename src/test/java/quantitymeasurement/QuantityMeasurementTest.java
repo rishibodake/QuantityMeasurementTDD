@@ -447,4 +447,12 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(valueInKG1,valueInKG2);
     }
 
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInKg_shouldReturnFalse(){
+        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0.0);
+        quantityMeasurementValue1.equals(null);
+        Assert.assertFalse(false);
+    }
+
 }
