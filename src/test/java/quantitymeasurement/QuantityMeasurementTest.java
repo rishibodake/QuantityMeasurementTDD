@@ -413,6 +413,37 @@ public class QuantityMeasurementTest {
         double check = valueInGallon.addition(valueInLiter);
         Assert.assertEquals(0,check,0);
     }
+    //Test for addition of 1 gallon and 1 gallon
+    @Test
+    public void givenOneGallonAndOneGallon_whenAdded_shouldReturn3point79Liters(){
+        QuantityMeasurement valueInGallon1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
+        QuantityMeasurement valueInGallon2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
+        double check = valueInGallon1.addition(valueInGallon2);
+        Assert.assertEquals(7.57,check,0);
+    }
+
+    //Test For Addition of 1 Liter and 1000 ml
+    @Test
+    public void givenOneLiterAnd1000Ml_whenAdded_shouldReturn2Liters(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
+        QuantityMeasurement valueInMl = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,1000.0);
+        double check = valueInLiter.addition(valueInMl);
+        Assert.assertEquals(2,check,0);
+    }
+    //Test For 0 kg is equal to 0 kg
+    @Test
+    public void givenZeroKgAndZeroKg_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInKG1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
+        QuantityMeasurement valueInKG2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
+        Assert.assertEquals(valueInKG1,valueInKG2);
+    }
+
+    //Test For 0 kg is equal to 0 kg
+    @Test
+    public void givenOneKgAndZeroKg_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInKG1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,1.0);
+        QuantityMeasurement valueInKG2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0.0);
+        Assert.assertNotEquals(valueInKG1,valueInKG2);
 
     //Test for addition of 1 gallon and 1 gallon
     @Test
@@ -432,4 +463,92 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(2,check,0);
     }
 
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInKg_shouldReturnFalse(){
+        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0.0);
+        quantityMeasurementValue1.equals(null);
+        Assert.assertFalse(false);
+    }
+
+    //Test For 0 gram is equal to 0 gram
+    @Test
+    public void givenZeroGramsAndZeroGrams_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInGram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
+        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
+        Assert.assertEquals(valueInGram1,valueInGram2);
+    }
+
+    //Test For 0 gram is equal to 1 gram
+    @Test
+    public void givenZeroGramsAndOneGrams_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInGram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
+        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,1);
+        Assert.assertNotEquals(valueInGram1,valueInGram2);
+    }
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInGram_shouldReturnFalse(){
+        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0.0);
+        quantityMeasurementValue1.equals(null);
+        Assert.assertFalse(false);
+    }
+
+    //Test For 0Kg and 0Gram
+    @Test
+    public void givenZeroKgAndZeroGram_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInKilogram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
+        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
+        Assert.assertEquals(valueInKilogram1,valueInGram2);
+    }
+
+    //Test For 1Kg and 1Gram
+    @Test
+    public void givenOneKgAndOneGram_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInKilogram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,1.0);
+        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,1.0);
+        Assert.assertNotEquals(valueInKilogram1,valueInGram2);
+    }
+
+    //Test For 1Kg is 1000grams
+    @Test
+    public void givenOneKgAnd1000Gram_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInKilogram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,1.0);
+        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,1000.0);
+        boolean check = valueInKilogram1.checkCompare(valueInGram2);
+        Assert.assertTrue(check);
+    }
+
+    //Test For 0 Tonnes and 0Tones
+    @Test
+    public void givenZeroToneAndZeroTone_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInTonne = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
+        QuantityMeasurement valueInTonne2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
+        Assert.assertEquals(valueInTonne,valueInTonne2);
+    }
+
+    //Test For 1 Tonnes and 0 Tones
+    @Test
+    public void givenZeroToneAndOneTone_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInTonne = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,1);
+        QuantityMeasurement valueInTonne2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
+        Assert.assertNotEquals(valueInTonne,valueInTonne2);
+    }
+
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInTonnes_shouldReturnFalse(){
+        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0.0);
+        quantityMeasurementValue1.equals(null);
+        Assert.assertFalse(false);
+    }
+
+    //Test For Addition  1 Tonnes And 1000 Gms
+    @Test
+    public void given1TonnesAnd1000Gms_whenAdded_shouldReturnAdditionInKg(){
+        QuantityMeasurement valueInTonne = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,1.0);
+        QuantityMeasurement valueInGrams = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,1000.0);
+        double check = valueInTonne.addition(valueInGrams);
+        Assert.assertEquals(1001,check,0);
+    }
 }
