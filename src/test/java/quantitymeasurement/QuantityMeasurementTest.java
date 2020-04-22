@@ -259,7 +259,6 @@ public class QuantityMeasurementTest {
         Length valueInInch = new Length(AllUnitsToUse.UnitConverter.INCHES,2.00);
         double check = valueInFeet.addition(valueInInch);
         Assert.assertEquals(14,check,0);
-
     }
 
     //Test For Adding 1 feet and 1 feet
@@ -269,7 +268,15 @@ public class QuantityMeasurementTest {
         Length valueInFeet2 = new Length(AllUnitsToUse.UnitConverter.FEET,1.00);
         double check = valueInFeet1.addition(valueInFeet2);
         Assert.assertEquals(24,check,0);
+    }
 
+    //Test For Adding 2 inch and 2.5 centimeter
+    @Test
+    public void givenTwoInchesAndTwoAndHalfCmt_whenAdded_shouldReturn3Inches(){
+        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,2.5);
+        Length valueInInch = new Length(AllUnitsToUse.UnitConverter.INCHES,2.00);
+        double check = valueInCm.addition(valueInInch);
+        Assert.assertEquals(3,check,0);
     }
 
 
