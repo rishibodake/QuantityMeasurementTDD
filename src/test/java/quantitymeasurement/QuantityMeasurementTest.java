@@ -279,4 +279,13 @@ public class QuantityMeasurementTest {
     }
 
 
+    //Test For Comparing 0 gallon is 0 gallon
+    @Test
+    public void given0GallonAnd0Gallon_whenCompare_shouldReturnEqual(){
+        QuantityMeasurement valueInGallon1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
+        QuantityMeasurement valueInGallon2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
+        Assert.assertEquals(valueInGallon1, valueInGallon2);
+    }
+
+
 }
