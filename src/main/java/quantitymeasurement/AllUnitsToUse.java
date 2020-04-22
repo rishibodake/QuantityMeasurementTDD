@@ -37,8 +37,16 @@ public class AllUnitsToUse {
                 return volume/1000;
             }
         },
-        KILOGRAM,
-        GRAM;
+        KILOGRAM{
+            public double conversion(double weight) {
+                return weight;
+            }
+        },
+        GRAM{
+            public double conversion(double weight) {
+                return weight/1000;
+            }
+        };
 
         public double conversion(double quantity) {
             return 0.0;
