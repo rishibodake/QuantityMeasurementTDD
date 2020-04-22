@@ -414,6 +414,15 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(0,check,0);
     }
 
+    //Test for additon of 1 gallon and 1 gallon
+    @Test
+    public void givenOneGallonAndOneGallon_whenAdded_shouldReturn3point79Liters(){
+        QuantityMeasurement valueInGallon1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
+        QuantityMeasurement valueInGallon2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
+        double check = valueInGallon1.addition(valueInGallon2);
+        Assert.assertEquals(7.57,check,0);
+    }
+
 
 
 }
