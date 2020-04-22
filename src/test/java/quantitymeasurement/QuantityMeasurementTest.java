@@ -610,5 +610,13 @@ public class QuantityMeasurementTest {
         boolean check = valueInDegree.compareTemperatures(valueInFahrenheit);
         Assert.assertTrue(check);
     }
+    //Test for 1 fahrenheit is 32 degree
+    @Test
+    public void given1FahrenheitAnd32Celsius_IfEqual_ReturnTrue(){
+        QuantityMeasurement degree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,-17.22222222222222);
+        QuantityMeasurement fahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,1);
+        boolean compareCheck = fahrenheit.compareTemperatures(degree);
+        Assert.assertTrue(compareCheck);
+    }
 
 }
