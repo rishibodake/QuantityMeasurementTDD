@@ -33,7 +33,7 @@ public class AllUnitsToUse {
             }
         };
 
-        public double convertToInches(double length) {
+        public double convertToInches(double quantity) {
             return 0.0;
         }
     }
