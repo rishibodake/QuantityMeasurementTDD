@@ -405,6 +405,38 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(check);
     }
 
+    //Test for additon of 0 gallon and 0 liter
+    @Test
+    public void givenZeroGallonAndZeroLiter_whenAdded_shouldRetuenZero(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
+        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
+        double check = valueInGallon.addition(valueInLiter);
+        Assert.assertEquals(0,check,0);
+    }
 
+    //Test for addition of 1 gallon and 1 gallon
+    @Test
+    public void givenOneGallonAndOneGallon_whenAdded_shouldReturn3point79Liters(){
+        QuantityMeasurement valueInGallon1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
+        QuantityMeasurement valueInGallon2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
+        double check = valueInGallon1.addition(valueInGallon2);
+        Assert.assertEquals(7.57,check,0);
+    }
+
+    //Test For Addition of 1 Liter and 1000 ml
+    @Test
+    public void givenOneLiterAnd1000Ml_whenAdded_shouldReturn2Liters(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
+        QuantityMeasurement valueInMl = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,1000.0);
+        double check = valueInLiter.addition(valueInMl);
+        Assert.assertEquals(2,check,0);
+    }
+    //Test For 0 kg is equal to 0 kg
+    @Test
+    public void givenZeroKgAndZeroKg_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInKG1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
+        QuantityMeasurement valueInKG2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
+        Assert.assertEquals(valueInKG1,valueInKG2);
+    }
 
 }
