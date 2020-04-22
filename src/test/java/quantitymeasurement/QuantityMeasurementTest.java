@@ -602,4 +602,13 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(check);
     }
 
+    //Test For 100 Degree and 212 Fahrenheit
+    @Test
+    public void givenValue100DegreeAnd212Fahrenheit_whenCompare_shouldReturnEqual(){
+        QuantityMeasurement valueInFahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,212.0);
+        QuantityMeasurement valueInDegree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,100.0);
+        boolean check = valueInDegree.compareTemperatures(valueInFahrenheit);
+        Assert.assertTrue(check);
+    }
+
 }
