@@ -511,5 +511,12 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(valueInTonne,valueInTonne2);
     }
 
+    //Test For 1 Tonnes and 0 Tones
+    @Test
+    public void givenZeroToneAndOneTone_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInTonne = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,1);
+        QuantityMeasurement valueInTonne2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
+        Assert.assertNotEquals(valueInTonne,valueInTonne2);
+    }
 
 }
