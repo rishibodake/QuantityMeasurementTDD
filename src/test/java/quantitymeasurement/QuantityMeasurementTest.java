@@ -459,7 +459,7 @@ public class QuantityMeasurementTest {
     @Test
     public void givenZeroGramsAndZeroGrams_whenCompare_shouldReturnTrue(){
         QuantityMeasurement valueInGram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
-        QuantityMeasurement valueInKGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
+        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
         Assert.assertEquals(valueInGram1,valueInGram2);
     }
 

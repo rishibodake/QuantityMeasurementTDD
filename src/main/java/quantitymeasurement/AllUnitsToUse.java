@@ -37,7 +37,8 @@ public class AllUnitsToUse {
                 return volume/1000;
             }
         },
-        KILOGRAM;
+        KILOGRAM,
+        GRAM;
 
         public double conversion(double quantity) {
             return 0.0;
