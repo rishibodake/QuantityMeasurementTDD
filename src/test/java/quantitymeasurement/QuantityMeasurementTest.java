@@ -576,4 +576,12 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(valueInFahrenheit1, valueInFahrenheit2);
     }
 
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInFahrenheit_shouldReturnFalse(){
+        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
+        quantityMeasurementValue1.equals(null);
+        Assert.assertFalse(false);
+    }
+
 }
