@@ -503,4 +503,13 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(check);
     }
 
+    //Test For 0 Tonnes and 0Tones
+    @Test
+    public void givenZeroToneAndZeroTone_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInTonne = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
+        QuantityMeasurement valueInTonne2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
+        Assert.assertEquals(valueInTonne,valueInTonne2);
+    }
+
+
 }
