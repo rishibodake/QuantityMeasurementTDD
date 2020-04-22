@@ -527,4 +527,12 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(false);
     }
 
+    //Test For Addition  1 Tonnes And 1000 Gms
+    @Test
+    public void given1TonnesAnd1000Gms_whenAdded_shouldReturnAdditionInKg(){
+        QuantityMeasurement valueInTonne = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,1.0);
+        QuantityMeasurement valueInGrams = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,1000.0);
+        double check = valueInTonne.addition(valueInGrams);
+        Assert.assertEquals(1001,check,0);
+    }
 }
