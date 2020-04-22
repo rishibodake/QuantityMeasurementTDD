@@ -387,7 +387,7 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(check);
     }
 
-    //Test For 0 Liter and 0 Mililiter
+    //Test For 1 Liter and 1 Mililiter
     @Test
     public void given1MililiterAnd1Liter_whenCompare_shouldReturnFalse(){
         QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
@@ -395,6 +395,16 @@ public class QuantityMeasurementTest {
         boolean check = valueInLiter.checkCompare(valueInMl);
         Assert.assertFalse(check);
     }
+
+    //Test For 1 Liter and 1000 Mililiter
+    @Test
+    public void given1000MililiterAnd1Liter_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
+        QuantityMeasurement valueInMl = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,1000.0);
+        boolean check = valueInLiter.checkCompare(valueInMl);
+        Assert.assertTrue(check);
+    }
+
 
 
 }
