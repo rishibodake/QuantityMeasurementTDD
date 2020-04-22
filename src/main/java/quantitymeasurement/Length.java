@@ -27,4 +27,10 @@ public class Length {
     }
 
 
+    public double addition(Length that) {
+        double firstValue = this.unit.convertToInches(this.value);
+        double secondValue = that.unit.convertToInches(that.value);
+        return firstValue+secondValue;
+
+    }
 }
