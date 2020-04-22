@@ -262,5 +262,15 @@ public class QuantityMeasurementTest {
 
     }
 
+    //Test For Adding 1 feet and 1 feet
+    @Test
+    public void givenOneFeetAndOneFeet_whenAdded_shouldReturn24Inches(){
+        Length valueInFeet1 = new Length(AllUnitsToUse.UnitConverter.FEET,1.00);
+        Length valueInFeet2 = new Length(AllUnitsToUse.UnitConverter.FEET,1.00);
+        double check = valueInFeet1.addition(valueInFeet2);
+        Assert.assertEquals(24,check,0);
+
+    }
+
 
 }
