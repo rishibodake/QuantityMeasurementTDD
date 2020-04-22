@@ -354,11 +354,19 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(check);
     }
 
-    //Test For Compare 0 Liter And 1 Liter
+    //Test For Compare 0 MiliLiter And 0 MiliLiter
     @Test
     public void given0MilliLiterAnd0MilliLiter_whenCompare_shouldReturnTue(){
         QuantityMeasurement valueInMl1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
         QuantityMeasurement valueInMl2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
         Assert.assertEquals(valueInMl1, valueInMl2);
+    }
+
+    //Test For Compare 0 MiliLiter And 1 MiliLiter
+    @Test
+    public void given0MilliLiterAnd1MilliLiter_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInMl1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
+        QuantityMeasurement valueInMl2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,1.0);
+        Assert.assertNotEquals(valueInMl1, valueInMl2);
     }
 }
