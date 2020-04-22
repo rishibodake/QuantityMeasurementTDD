@@ -2,54 +2,53 @@ package quantitymeasurement;
 
 import org.junit.Assert;
 import org.junit.Test;
-import quantitymeasurement.AllUnitsToUse;
 
 public class QuantityMeasurementTest {
 
     //TestCase 1
     @Test
     public void given0FeetAnd0Feet_whenCompare_shouldReturnEqual(){
-      Length lengthValue1 = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
-      Length lengthValue2 = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
-      Assert.assertEquals(lengthValue1, lengthValue2);
+      QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,0.0);
+      QuantityMeasurement quantityMeasurementValue2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,0.0);
+      Assert.assertEquals(quantityMeasurementValue1, quantityMeasurementValue2);
     }
 
     //TestCase For Unequal Objects
     @Test
     public void givenValueZeroAndOneFeet_shouldReturnFalse(){
-        Length lengthValue1 = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
-        Length lengthValue2 = new Length(AllUnitsToUse.UnitConverter.FEET,1.0);
-        Assert.assertNotEquals(lengthValue1, lengthValue2);
+        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,0.0);
+        QuantityMeasurement quantityMeasurementValue2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.0);
+        Assert.assertNotEquals(quantityMeasurementValue1, quantityMeasurementValue2);
     }
 
     //Test For Null and Value
     @Test
     public void givenNullAndOneValueInFeet_shouldReturnFalse(){
-        Length lengthValue1 = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
-        lengthValue1.equals(null);
+        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,0.0);
+        quantityMeasurementValue1.equals(null);
         Assert.assertFalse(false);
     }
 
     //Test For 0 inches and 0 inches
     @Test
     public void given0InchesAnd0Inches_shouldReturnTrue(){
-        Length valueInInches1 = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
-        Length valueInInches2 = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        QuantityMeasurement valueInInches1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        QuantityMeasurement valueInInches2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0.0);
         Assert.assertEquals(valueInInches1,valueInInches2);
     }
 
     //Test For Two Unequal Objects
     @Test
     public void given0InchAnd1Inch_whenCompare_shouldReturnFalse(){
-        Length valueInInches1 = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
-        Length valueInInches2 = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
+        QuantityMeasurement valueInInches1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        QuantityMeasurement valueInInches2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,1.0);
         Assert.assertNotEquals(valueInInches1,valueInInches2);
     }
 
     //Test For Null and Value
     @Test
     public void givenNullAndOneValueInInch_shouldReturnFalse(){
-        Length valueInInche = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        QuantityMeasurement valueInInche = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0.0);
         valueInInche.equals(null);
         Assert.assertFalse(false);
     }
@@ -57,8 +56,8 @@ public class QuantityMeasurementTest {
     //Test For Conversion Feet To Inches
     @Test
     public void given0FeetAnd0Inches_whenCompare_shouldReturnTrue(){
-        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        QuantityMeasurement valueInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,0.0);
+        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0.0);
         boolean check = valueInFeet.checkCompare(valueInInches);
         Assert.assertTrue(check);
     }
@@ -66,8 +65,8 @@ public class QuantityMeasurementTest {
     //Test For Conversion Inches  To Feet
     @Test
     public void given0InchesAnd0Feet_whenCompare_shouldReturnTrue(){
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
-        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,0.0);
+        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        QuantityMeasurement valueInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,0.0);
         boolean check = valueInInches.checkCompare(valueInFeet);
         Assert.assertTrue(check);
     }
@@ -75,24 +74,24 @@ public class QuantityMeasurementTest {
     //Test For 1 Inch & 1 Feet Should return False
     @Test
     public void given1InchAnd1Feet_whenCompare_shouldReturnFalse(){
-        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.0);
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
+        QuantityMeasurement valueInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.0);
+        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,1.0);
         Assert.assertNotEquals(valueInInches,valueInFeet);
     }
 
     //Test For 1 Feet & 1 Inch Should return False
     @Test
     public void given1FeetAnd1Inch_whenCompare_shouldReturnFalse(){
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
-        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.0);
+        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,1.0);
+        QuantityMeasurement valueInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.0);
         Assert.assertNotEquals(valueInFeet,valueInInches);
     }
 
     //Test For 1 Feet is 12 inches
     @Test
     public void given1FeetAnd12Inches_whenCompare_shouldEqualsTrue(){
-        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.0);
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,12.0);
+        QuantityMeasurement valueInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.0);
+        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,12.0);
         boolean check = valueInFeet.checkCompare(valueInInches);
         Assert.assertTrue(check);
     }
@@ -100,8 +99,8 @@ public class QuantityMeasurementTest {
     //Test For 12 Inches is 1 Feet
     @Test
     public void given12InchesAnd1Feet_whenCompare_shouldEqualsTrue(){
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,12.0);
-        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.0);
+        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,12.0);
+        QuantityMeasurement valueInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.0);
         boolean check = valueInInches.checkCompare(valueInFeet);
         Assert.assertTrue(check);
     }
@@ -109,23 +108,23 @@ public class QuantityMeasurementTest {
     //Test For Feet To yard
     @Test
     public void given0YardsAnd0Yards_whenCompare_shouldReturnTrue(){
-        Length value1InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,0.0);
-        Length value2InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,0.0);
+        QuantityMeasurement value1InYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,0.0);
+        QuantityMeasurement value2InYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,0.0);
         Assert.assertEquals(value1InYards,value2InYards);
     }
 
     //Test For Equal Quantity but Different values
     @Test
     public void givenValuesIn0yardAnd1yardValues_ShouldReturnFalse() {
-        Length value1InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,0.0);
-        Length value2InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
+        QuantityMeasurement value1InYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,0.0);
+        QuantityMeasurement value2InYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,1.0);
         Assert.assertNotEquals(value1InYards, value2InYards);
     }
 
     //Test For 1 Value and Null value
     @Test
     public void givenOneNUllValueYardUnit_IfNull_ShouldReturnFalse() {
-        Length value1InYards = new Length(AllUnitsToUse.UnitConverter.YARDS,10.0);
+        QuantityMeasurement value1InYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,10.0);
         value1InYards.equals(null);
         Assert.assertFalse(false);
     }
@@ -133,8 +132,8 @@ public class QuantityMeasurementTest {
     //Test For 1 yard is 3 feet
     @Test
     public void givenValuesAsThreeFeetAndOneYard_whenCompare_ShouldReturnTrue() {
-        Length valuesInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,3.0);
-        Length valueInYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
+        QuantityMeasurement valuesInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,3.0);
+        QuantityMeasurement valueInYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,1.0);
         boolean compareCheck = valuesInFeet.checkCompare(valueInYards);
         Assert.assertTrue(compareCheck);
     }
@@ -142,8 +141,8 @@ public class QuantityMeasurementTest {
     //Test For 1 feet is not 1 yards
     @Test
     public void givenValuesAsOneFeetAndOneYard_whenCompare_ShouldReturnfalse() {
-        Length valuesInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.0);
-        Length valueInYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
+        QuantityMeasurement valuesInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.0);
+        QuantityMeasurement valueInYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,1.0);
         boolean compareCheck = valuesInFeet.checkCompare(valueInYards);
         Assert.assertFalse(compareCheck);
     }
@@ -151,8 +150,8 @@ public class QuantityMeasurementTest {
     //Test For 1 Inch is Not 1 Yard
     @Test
     public void givenValuesAsOneInchAndOneYard_whenCompare_ShouldReturnfalse() {
-        Length valuesInInch = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
-        Length valueInYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
+        QuantityMeasurement valuesInInch = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,1.0);
+        QuantityMeasurement valueInYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,1.0);
         boolean compareCheck = valuesInInch.checkCompare(valueInYards);
         Assert.assertFalse(compareCheck);
     }
@@ -160,8 +159,8 @@ public class QuantityMeasurementTest {
     //Test For 1 yards is 36 inches
     @Test
     public void given1Yard36Inches_whenCompare_shouldReturnTrue(){
-        Length valueInYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,36.00);
+        QuantityMeasurement valueInYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,1.0);
+        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,36.00);
         boolean check = valueInYards.checkCompare(valueInInches);
         Assert.assertTrue(check);
     }
@@ -169,8 +168,8 @@ public class QuantityMeasurementTest {
     //Test For 36 inches is 1 yards
     @Test
     public void given36Inches1Yarfs_whenCompare_shouldReturnTrue(){
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,36.00);
-        Length valueInYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
+        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,36.00);
+        QuantityMeasurement valueInYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,1.0);
         boolean check = valueInInches.checkCompare(valueInYards);
         Assert.assertTrue(check);
     }
@@ -178,16 +177,16 @@ public class QuantityMeasurementTest {
     //Test For 1 yard is 3 feet
     @Test
     public void givenValuesAsOneYardAnd3Feet_whenCompare_ShouldReturnTrue() {
-        Length valueInYards = new Length(AllUnitsToUse.UnitConverter.YARDS,1.0);
-        Length valuesInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,3.0);
+        QuantityMeasurement valueInYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,1.0);
+        QuantityMeasurement valuesInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,3.0);
         boolean compareCheck = valueInYards.checkCompare(valuesInFeet);
         Assert.assertTrue(compareCheck);
     }
     //test For 0Cm and OCm
     @Test
     public void givenValuesAsZeroCmAndZeroCm_shouldReturnTrue(){
-        Length valueInCm1 = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0);
-        Length valueInCm2 = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0);
+        QuantityMeasurement valueInCm1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,0);
+        QuantityMeasurement valueInCm2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,0);
         Assert.assertEquals(valueInCm1,valueInCm2);
     }
 
@@ -195,15 +194,15 @@ public class QuantityMeasurementTest {
     @Test
     public void givenValuesAsZeroAndOneCm_whenCompare_shouldReturnFalse()
     {
-        Length cmValue1 = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
-        Length cmValue2 = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,1.0);
+        QuantityMeasurement cmValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
+        QuantityMeasurement cmValue2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,1.0);
         Assert.assertNotEquals(cmValue1, cmValue2);
     }
 
     //Test For Null and Value
     @Test
     public void givenNullAndOneValueInCm_shouldReturnFalse(){
-        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
+        QuantityMeasurement valueInCm = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
         valueInCm.equals(null);
         Assert.assertFalse(false);
     }
@@ -211,8 +210,8 @@ public class QuantityMeasurementTest {
     //Test for 0Cm and 0Inches
     @Test
     public void given0InchesAnd0Cm_whenCompare_shouldReturnTrue(){
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,0.0);
-        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
+        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0.0);
+        QuantityMeasurement valueInCm = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
         boolean check = valueInInches.checkCompare(valueInCm);
         Assert.assertTrue(check);
     }
@@ -220,16 +219,16 @@ public class QuantityMeasurementTest {
     //Test For 1cm and 1 Inches
     @Test
     public void given1CmAnd1Inches_whenCompare_shouldReturnFalse(){
-        Length valueInInches = new Length(AllUnitsToUse.UnitConverter.INCHES,1.0);
-        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,1.0);
+        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,1.0);
+        QuantityMeasurement valueInCm = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,1.0);
         Assert.assertNotEquals(valueInCm,valueInInches);
     }
 
     //Test TO Compare that 2 in is 5 cm
     @Test
     public void given2InchesAnd5Cm_whenCompare_shouldEqualsTrue(){
-        Length valueInFInches = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,5.0);
-        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.INCHES,2.0);
+        QuantityMeasurement valueInFInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,5.0);
+        QuantityMeasurement valueInCm = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,2.0);
         boolean check = valueInFInches.checkCompare(valueInCm);
         Assert.assertTrue(check);
     }
@@ -237,8 +236,8 @@ public class QuantityMeasurementTest {
     //Test That Add 0Inches And 0Inches   Basic Additon
     @Test
     public void given0InchesAnd0Inches_whenAdded_shouldReturnTrue(){
-        Length valueInFInch1 = new Length(AllUnitsToUse.UnitConverter.INCHES,0);
-        Length valueInInch2= new Length(AllUnitsToUse.UnitConverter.INCHES,0);
+        QuantityMeasurement valueInFInch1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0);
+        QuantityMeasurement valueInInch2= new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0);
         double check = valueInFInch1.addition(valueInInch2);
         Assert.assertEquals(0,check,0);
     }
@@ -246,8 +245,8 @@ public class QuantityMeasurementTest {
     //Test That Add 2 inches and 2 inches should return 4 inches
     @Test
     public void given2InchesAnd2Inches_whenAdded_shouldReturn4(){
-        Length valueInInch1 = new Length(AllUnitsToUse.UnitConverter.INCHES,2.0);
-        Length valueInInch2= new Length(AllUnitsToUse.UnitConverter.INCHES,2.0);
+        QuantityMeasurement valueInInch1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,2.0);
+        QuantityMeasurement valueInInch2= new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,2.0);
         double check = valueInInch1.addition(valueInInch2);
         Assert.assertEquals(4,check,0);
     }
@@ -255,8 +254,8 @@ public class QuantityMeasurementTest {
     //Test For Adding 1 feet and 2 inch
     @Test
     public void givenOneFeetAndTwoInch_whenAdded_shouldReturn14Inches(){
-        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.00);
-        Length valueInInch = new Length(AllUnitsToUse.UnitConverter.INCHES,2.00);
+        QuantityMeasurement valueInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.00);
+        QuantityMeasurement valueInInch = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,2.00);
         double check = valueInFeet.addition(valueInInch);
         Assert.assertEquals(14,check,0);
     }
@@ -264,8 +263,8 @@ public class QuantityMeasurementTest {
     //Test For Adding 1 feet and 1 feet
     @Test
     public void givenOneFeetAndOneFeet_whenAdded_shouldReturn24Inches(){
-        Length valueInFeet1 = new Length(AllUnitsToUse.UnitConverter.FEET,1.00);
-        Length valueInFeet2 = new Length(AllUnitsToUse.UnitConverter.FEET,1.00);
+        QuantityMeasurement valueInFeet1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.00);
+        QuantityMeasurement valueInFeet2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.00);
         double check = valueInFeet1.addition(valueInFeet2);
         Assert.assertEquals(24,check,0);
     }
@@ -273,8 +272,8 @@ public class QuantityMeasurementTest {
     //Test For Adding 2 inch and 2.5 centimeter
     @Test
     public void givenTwoInchesAndTwoAndHalfCmt_whenAdded_shouldReturn3Inches(){
-        Length valueInCm = new Length(AllUnitsToUse.UnitConverter.CENTIMETER,2.5);
-        Length valueInInch = new Length(AllUnitsToUse.UnitConverter.INCHES,2.00);
+        QuantityMeasurement valueInCm = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,2.5);
+        QuantityMeasurement valueInInch = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,2.00);
         double check = valueInCm.addition(valueInInch);
         Assert.assertEquals(3,check,0);
     }

@@ -3,11 +3,11 @@ package quantitymeasurement;
 
 import java.util.Objects;
 
-public class Length {
+public class QuantityMeasurement {
     public final double value;
     private final  AllUnitsToUse.UnitConverter unit;
 
-    public Length(AllUnitsToUse.UnitConverter unit, double value) {
+    public QuantityMeasurement(AllUnitsToUse.UnitConverter unit, double value) {
         this.value = value;
         this.unit = unit;
     }
@@ -16,18 +16,18 @@ public class Length {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Length length = (Length) o;
-        return Double.compare(length.value, value) == 0 && unit == length.unit;
+        QuantityMeasurement quantityMeasurement = (QuantityMeasurement) o;
+        return Double.compare(quantityMeasurement.value, value) == 0 && unit == quantityMeasurement.unit;
     }
 
-    public boolean checkCompare(Length that) {
+    public boolean checkCompare(QuantityMeasurement that) {
         double firstValue = this.unit.convertToInches(this.value);
         double secondValue = that.unit.convertToInches(that.value);
         return Objects.equals(firstValue, secondValue);
     }
 
 
-    public double addition(Length that) {
+    public double addition(QuantityMeasurement that) {
         double firstValue = this.unit.convertToInches(this.value);
         double secondValue = that.unit.convertToInches(that.value);
         return firstValue+secondValue;
