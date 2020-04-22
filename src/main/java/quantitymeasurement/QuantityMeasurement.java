@@ -21,15 +21,15 @@ public class QuantityMeasurement {
     }
 
     public boolean checkCompare(QuantityMeasurement that) {
-        double firstValue = this.unit.convertToInches(this.value);
-        double secondValue = that.unit.convertToInches(that.value);
+        double firstValue = this.unit.conversion(this.value);
+        double secondValue = that.unit.conversion(that.value);
         return Objects.equals(firstValue, secondValue);
     }
 
 
     public double addition(QuantityMeasurement that) {
-        double firstValue = this.unit.convertToInches(this.value);
-        double secondValue = that.unit.convertToInches(that.value);
+        double firstValue = this.unit.conversion(this.value);
+        double secondValue = that.unit.conversion(that.value);
         return firstValue+secondValue;
 
     }
