@@ -327,5 +327,14 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(false);
     }
 
+    //Test For Conversion Gallon to Liter
+    @Test
+    public void given0GallonAnd0Liter_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
+        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
+        boolean check = valueInLiter.checkCompare(valueInGallon);
+        Assert.assertTrue(check);
+    }
+
 
 }
