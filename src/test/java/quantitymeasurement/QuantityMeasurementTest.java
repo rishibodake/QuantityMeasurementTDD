@@ -414,7 +414,7 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(0,check,0);
     }
 
-    //Test for additon of 1 gallon and 1 gallon
+    //Test for addition of 1 gallon and 1 gallon
     @Test
     public void givenOneGallonAndOneGallon_whenAdded_shouldReturn3point79Liters(){
         QuantityMeasurement valueInGallon1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
@@ -423,6 +423,13 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(7.57,check,0);
     }
 
-
+    //Test For Addition of 1 Liter and 1000 ml
+    @Test
+    public void givenOneLiterAnd1000Ml_whenAdded_shouldReturn2Liters(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
+        QuantityMeasurement valueInMl = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,1000.0);
+        double check = valueInLiter.addition(valueInMl);
+        Assert.assertEquals(2,check,0);
+    }
 
 }
