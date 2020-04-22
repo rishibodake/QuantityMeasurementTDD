@@ -439,4 +439,12 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(valueInKG1,valueInKG2);
     }
 
+    //Test For 0 kg is equal to 0 kg
+    @Test
+    public void givenOneKgAndZeroKg_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInKG1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,1.0);
+        QuantityMeasurement valueInKG2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0.0);
+        Assert.assertNotEquals(valueInKG1,valueInKG2);
+    }
+
 }
