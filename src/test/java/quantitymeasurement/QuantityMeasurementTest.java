@@ -405,6 +405,15 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(check);
     }
 
+    //Test for additon of 0 gallon and 0 liter
+    @Test
+    public void givenZeroGallonAndZeroLiter_whenAdded_shouldRetuenZero(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
+        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
+        double check = valueInGallon.addition(valueInLiter);
+        Assert.assertEquals(0,check,0);
+    }
+
 
 
 }
