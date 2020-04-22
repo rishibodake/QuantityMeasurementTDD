@@ -19,15 +19,24 @@ public class AllUnitsToUse {
         },
         CENTIMETER {
             public double convertToInches(double length) {
-                return length/2.5;
+                return length / 2.5;
             }
         },
-        GALLON,
-        LITER;
+        GALLON {
+            public double convertToInches(double volume) {
+                return volume * 3.785;
+            }
+        },
+        LITER {
+            public double convertToInches(double volume) {
+                return volume;
+            }
+        };
+
         public double convertToInches(double length) {
             return 0.0;
         }
-        }
+    }
 }
 
 
