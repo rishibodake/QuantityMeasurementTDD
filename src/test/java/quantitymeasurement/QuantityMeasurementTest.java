@@ -455,4 +455,12 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(false);
     }
 
+    //Test For 0 gram is equal to 0 gram
+    @Test
+    public void givenZeroGramsAndZeroGrams_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInGram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
+        QuantityMeasurement valueInKGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
+        Assert.assertEquals(valueInGram1,valueInGram2);
+    }
+
 }
