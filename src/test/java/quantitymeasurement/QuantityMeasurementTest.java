@@ -478,4 +478,12 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(false);
     }
 
+    //Test For 0Kg and 0Gram
+    @Test
+    public void givenZeroKgAndZeroGram_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInKilogram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
+        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
+        Assert.assertNotEquals(valueInKilogram1,valueInGram2);
+    }
+
 }
