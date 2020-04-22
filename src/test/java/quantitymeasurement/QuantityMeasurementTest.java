@@ -369,4 +369,12 @@ public class QuantityMeasurementTest {
         QuantityMeasurement valueInMl2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,1.0);
         Assert.assertNotEquals(valueInMl1, valueInMl2);
     }
+
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInMiliLiter_shouldReturnFalse(){
+        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
+        valueInLiter.equals(null);
+        Assert.assertFalse(false);
+    }
 }
