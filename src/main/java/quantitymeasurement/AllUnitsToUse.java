@@ -54,10 +54,15 @@ public class AllUnitsToUse {
         DEGREE{
           public double conversion(double temperature)
           {
-              return temperature;
+              return temperature - 32 * 5 / 9;
           }
         },
-        FAHRENHEIT;
+        FAHRENHEIT{
+            public double conversion(double temperature)
+            {
+                return temperature * 9 / 5 + 32;
+            }
+        };
 
         public double conversion(double quantity) {
             return 0.0;
