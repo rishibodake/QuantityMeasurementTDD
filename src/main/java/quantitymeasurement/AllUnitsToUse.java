@@ -50,6 +50,12 @@ public class AllUnitsToUse {
             public double conversion(double weight) {
                 return weight * 1000;
             }
+        },
+        DEGREE{
+          public double conversion(double temperature)
+          {
+              return temperature;
+          }
         };
 
         public double conversion(double quantity) {
