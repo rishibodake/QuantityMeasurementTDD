@@ -243,4 +243,14 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(0,check,0);
     }
 
+    //Test That Add 2 inches and 2 inches should return 4 inches
+    @Test
+    public void given2InchesAnd2Inches_whenAdded_shouldReturn4(){
+        Length valueInFInch1 = new Length(AllUnitsToUse.UnitConverter.INCHES,2.0);
+        Length valueInInch2= new Length(AllUnitsToUse.UnitConverter.INCHES,2.0);
+        double check = valueInFInch1.addition(valueInInch2);
+        Assert.assertEquals(4,check,0);
+    }
+
+
 }
