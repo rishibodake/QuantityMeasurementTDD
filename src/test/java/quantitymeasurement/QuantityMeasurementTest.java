@@ -295,5 +295,13 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(valueInGallon1, valueInGallon2);
     }
 
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInGallon_shouldReturnFalse(){
+        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
+        valueInGallon.equals(null);
+        Assert.assertFalse(false);
+    }
+
 
 }
