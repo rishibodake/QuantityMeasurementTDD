@@ -311,5 +311,13 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(valueInLiter1, valueInLiter2);
     }
 
+    //Test For Compare 0 Liter And 1 Liter
+    @Test
+    public void given0LiterAnd1Liter_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInLiter1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
+        QuantityMeasurement valueInLiter2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
+        Assert.assertNotEquals(valueInLiter1, valueInLiter2);
+    }
+
 
 }
