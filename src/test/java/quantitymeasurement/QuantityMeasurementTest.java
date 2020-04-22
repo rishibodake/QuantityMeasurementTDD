@@ -551,4 +551,88 @@ public class QuantityMeasurementTest {
         double check = valueInTonne.addition(valueInGrams);
         Assert.assertEquals(1001,check,0);
     }
+
+    //Test For Comparing 0 Degree with 0 Degree
+    @Test
+    public void given0DegreeAnd0Degree_whenCompare_shouldReturnEqual(){
+        QuantityMeasurement valueInDegree1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        QuantityMeasurement valueInDegree2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        Assert.assertEquals(valueInDegree1, valueInDegree2);
+    }
+
+    //Test For Comparing 0 Degree with 1 Degree
+    @Test
+    public void given0DegreeAnd1Degree_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInDegree1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        QuantityMeasurement valueInDegree2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,1.0);
+        Assert.assertNotEquals(valueInDegree1, valueInDegree2);
+    }
+
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInDegree_shouldReturnFalse(){
+        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        quantityMeasurementValue1.equals(null);
+        Assert.assertFalse(false);
+    }
+
+    //Test For Comparing 0 FAHRENHEIT with 0 FAHRENHEIT
+    @Test
+    public void given0FahrenheitAnd0Fahrenheit_whenCompare_shouldReturnEqual(){
+        QuantityMeasurement valueInFahrenheit1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
+        QuantityMeasurement valueInFahrenheit2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
+        Assert.assertEquals(valueInFahrenheit1, valueInFahrenheit2);
+    }
+
+    //Test For Comparing 1 FAHRENHEIT with 0 FAHRENHEIT
+    @Test
+    public void given0FahrenheitAnd1Fahrenheit_whenCompare_shouldReturnEqual(){
+        QuantityMeasurement valueInFahrenheit1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
+        QuantityMeasurement valueInFahrenheit2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,1.0);
+        Assert.assertNotEquals(valueInFahrenheit1, valueInFahrenheit2);
+    }
+
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInFahrenheit_shouldReturnFalse(){
+        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
+        quantityMeasurementValue1.equals(null);
+        Assert.assertFalse(false);
+    }
+
+    //Test For 0 Degree and 0 Fahrenheit
+    @Test
+    public void givenValue0DegreeAnd0Fahrenheit_whenCompare_shouldReturnTrue(){
+        QuantityMeasurement valueInFahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
+        QuantityMeasurement valueInDegree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        boolean check = valueInDegree.checkCompare(valueInFahrenheit);
+        Assert.assertTrue(check);
+    }
+
+    //Test For 0 Degree and 1 Fahrenheit
+    @Test
+    public void givenValue0DegreeAnd1Fahrenheit_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInFahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,1.0);
+        QuantityMeasurement valueInDegree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        boolean check = valueInDegree.checkCompare(valueInFahrenheit);
+        Assert.assertFalse(check);
+    }
+
+    //Test For 100 Degree and 212 Fahrenheit
+    @Test
+    public void givenValue100DegreeAnd212Fahrenheit_whenCompare_shouldReturnEqual(){
+        QuantityMeasurement valueInFahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,212.0);
+        QuantityMeasurement valueInDegree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,100.0);
+        boolean check = valueInDegree.compareTemperatures(valueInFahrenheit);
+        Assert.assertTrue(check);
+    }
+    //Test for 1 fahrenheit is 32 degree
+    @Test
+    public void given1FahrenheitAnd32Celsius_IfEqual_ReturnTrue(){
+        QuantityMeasurement degree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,-17.22222222222222);
+        QuantityMeasurement fahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,1);
+        boolean compareCheck = fahrenheit.compareTemperatures(degree);
+        Assert.assertTrue(compareCheck);
+    }
+
 }

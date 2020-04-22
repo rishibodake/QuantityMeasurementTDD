@@ -50,6 +50,18 @@ public class AllUnitsToUse {
             public double conversion(double weight) {
                 return weight * 1000;
             }
+        },
+        DEGREE{
+          public double conversion(double temperature)
+          {
+              return temperature - 32 * 5 / 9;
+          }
+        },
+        FAHRENHEIT{
+            public double conversion(double temperature)
+            {
+                return temperature * 9 / 5 + 32;
+            }
         };
 
         public double conversion(double quantity) {
