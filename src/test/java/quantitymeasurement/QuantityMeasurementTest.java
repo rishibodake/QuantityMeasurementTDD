@@ -234,4 +234,13 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(check);
     }
 
+    //Test That Add 0Inches And 0Inches   Basic Additon
+    @Test
+    public void given0InchesAnd0Inches_whenAdded_shouldReturnTrue(){
+        Length valueInFInch1 = new Length(AllUnitsToUse.UnitConverter.INCHES,0);
+        Length valueInInch2= new Length(AllUnitsToUse.UnitConverter.INCHES,0);
+        boolean check = valueInFInch1.additon(valueInInch2);
+        Assert.assertTrue(check);
+    }
+
 }
