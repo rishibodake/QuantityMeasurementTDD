@@ -239,8 +239,8 @@ public class QuantityMeasurementTest {
     public void given0InchesAnd0Inches_whenAdded_shouldReturnTrue(){
         Length valueInFInch1 = new Length(AllUnitsToUse.UnitConverter.INCHES,0);
         Length valueInInch2= new Length(AllUnitsToUse.UnitConverter.INCHES,0);
-        boolean check = valueInFInch1.addition(valueInInch2);
-        Assert.assertEquals(0,check);
+        double check = valueInFInch1.addition(valueInInch2);
+        Assert.assertEquals(0,check,0);
     }
 
 }

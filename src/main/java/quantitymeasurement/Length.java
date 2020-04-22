@@ -26,4 +26,5 @@ public class Length {
         return Objects.equals(firstValue, secondValue);
     }
 
+
 }
