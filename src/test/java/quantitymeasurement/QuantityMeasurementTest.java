@@ -359,10 +359,6 @@ public class QuantityMeasurementTest {
     public void given0MilliLiterAnd0MilliLiter_whenCompare_shouldReturnTue(){
         QuantityMeasurement valueInMl1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
         QuantityMeasurement valueInMl2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
-        Assert.assertNotEquals(valueInMl1, valueInMl2);
+        Assert.assertEquals(valueInMl1, valueInMl2);
     }
-
-
-
-
 }
