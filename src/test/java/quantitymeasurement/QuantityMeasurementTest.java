@@ -537,10 +537,19 @@ public class QuantityMeasurementTest {
     }
 
     //Test For Comparing 0 Degree with 0 Degree
+    @Test
     public void given0DegreeAnd0Degree_whenCompare_shouldReturnEqual(){
         QuantityMeasurement valueInDegree1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
         QuantityMeasurement valueInDegree2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
         Assert.assertEquals(valueInDegree1, valueInDegree2);
+    }
+
+    //Test For Comparing 0 Degree with 1 Degree
+    @Test
+    public void given0DegreeAnd1Degree_whenCompare_shouldReturnFalse(){
+        QuantityMeasurement valueInDegree1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
+        QuantityMeasurement valueInDegree2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,1.0);
+        Assert.assertNotEquals(valueInDegree1, valueInDegree2);
     }
 
 }
