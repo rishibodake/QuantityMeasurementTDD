@@ -470,5 +470,12 @@ public class QuantityMeasurementTest {
         QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,1);
         Assert.assertNotEquals(valueInGram1,valueInGram2);
     }
+    //Test For Null and Value
+    @Test
+    public void givenNullAndOneValueInGram_shouldReturnFalse(){
+        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0.0);
+        quantityMeasurementValue1.equals(null);
+        Assert.assertFalse(false);
+    }
 
 }
