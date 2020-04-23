@@ -53,15 +53,6 @@ public class QuantityMeasurementTest {
         Assert.assertFalse(false);
     }
 
-    //Test For Conversion Feet To Inches
-    @Test
-    public void given0FeetAnd0Inches_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,0.0);
-        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0.0);
-        boolean check = valueInFeet.checkCompare(valueInInches);
-        Assert.assertTrue(check);
-    }
-
     //Test For Conversion Inches  To Feet
     @Test
     public void given0InchesAnd0Feet_whenCompare_shouldReturnTrue(){
@@ -95,16 +86,6 @@ public class QuantityMeasurementTest {
         boolean check = valueInFeet.checkCompare(valueInInches);
         Assert.assertTrue(check);
     }
-
-    //Test For 12 Inches is 1 Feet
-    @Test
-    public void given12InchesAnd1Feet_whenCompare_shouldEqualsTrue(){
-        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,12.0);
-        QuantityMeasurement valueInFeet = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.0);
-        boolean check = valueInInches.checkCompare(valueInFeet);
-        Assert.assertTrue(check);
-    }
-
     //Test For Feet To yard
     @Test
     public void given0YardsAnd0Yards_whenCompare_shouldReturnTrue(){
@@ -155,17 +136,7 @@ public class QuantityMeasurementTest {
         boolean compareCheck = valuesInInch.checkCompare(valueInYards);
         Assert.assertFalse(compareCheck);
     }
-
-    //Test For 1 yards is 36 inches
-    @Test
-    public void given1Yard36Inches_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInYards = new QuantityMeasurement(AllUnitsToUse.UnitConverter.YARDS,1.0);
-        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,36.00);
-        boolean check = valueInYards.checkCompare(valueInInches);
-        Assert.assertTrue(check);
-    }
-
-    //Test For 36 inches is 1 yards
+     //Test For 36 inches is 1 yards
     @Test
     public void given36Inches1Yarfs_whenCompare_shouldReturnTrue(){
         QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,36.00);
@@ -232,17 +203,7 @@ public class QuantityMeasurementTest {
         boolean check = valueInFInches.checkCompare(valueInCm);
         Assert.assertTrue(check);
     }
-
-    //Test That Add 0Inches And 0Inches   Basic Additon
-    @Test
-    public void given0InchesAnd0Inches_whenAdded_shouldReturnTrue(){
-        QuantityMeasurement valueInFInch1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0);
-        QuantityMeasurement valueInInch2= new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0);
-        double check = valueInFInch1.addition(valueInInch2);
-        Assert.assertEquals(0,check,0);
-    }
-
-    //Test That Add 2 inches and 2 inches should return 4 inches
+     //Test That Add 2 inches and 2 inches should return 4 inches
     @Test
     public void given2InchesAnd2Inches_whenAdded_shouldReturn4(){
         QuantityMeasurement valueInInch1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,2.0);
