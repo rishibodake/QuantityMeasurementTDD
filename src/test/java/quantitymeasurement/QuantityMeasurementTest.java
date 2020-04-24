@@ -220,7 +220,6 @@ public class QuantityMeasurementTest {
         double check = valueInFeet.addition(valueInInch);
         Assert.assertEquals(14,check,0);
     }
-
     //Test For Adding 1 feet and 1 feet
     @Test
     public void givenOneFeetAndOneFeet_whenAdded_shouldReturn24Inches(){
