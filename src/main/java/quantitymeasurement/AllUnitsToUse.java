@@ -3,30 +3,71 @@ package quantitymeasurement;
 public class AllUnitsToUse {
     public enum UnitConverter {
         FEET {
-            public double convertToInches(double length) {
+            public double conversion(double length) {
                 return length * 12;
             }
         },
         INCHES {
-            public double convertToInches(double length) {
+            public double conversion(double length) {
                 return length;
             }
         },
         YARDS {
-            public double convertToInches(double length) {
+            public double conversion(double length) {
                 return length * 3 * 12;
             }
         },
         CENTIMETER {
-            public double convertToInches(double length) {
-                return length/2.5;
+            public double conversion(double length) {
+                return length / 2.5;
             }
-
+        },
+        GALLON {
+            public double conversion(double volume) {
+                return volume * 3.785;
+            }
+        },
+        LITER {
+            public double conversion(double volume) {
+                return volume;
+            }
+        },
+        MILILITER{
+            public double conversion(double volume) {
+                return volume/1000;
+            }
+        },
+        KILOGRAM{
+            public double conversion(double weight) {
+                return weight;
+            }
+        },
+        GRAM{
+            public double conversion(double weight) {
+                return weight/1000;
+            }
+        },TONNE{
+            public double conversion(double weight) {
+                return weight * 1000;
+            }
+        },
+        DEGREE{
+          public double conversion(double temperature)
+          {
+              return temperature - 32 * 5 / 9;
+          }
+        },
+        FAHRENHEIT{
+            public double conversion(double temperature)
+            {
+                return temperature * 9 / 5 + 32;
+            }
         };
-        public double convertToInches(double length) {
+
+        public double conversion(double quantity) {
             return 0.0;
         }
-        }
+    }
 }
 
 
