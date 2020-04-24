@@ -153,48 +153,7 @@ public class QuantityMeasurementTest {
         boolean compareCheck = valueInYards.checkCompare(valuesInFeet);
         Assert.assertTrue(compareCheck);
     }
-    //test For 0Cm and OCm
-    @Test
-    public void givenValuesAsZeroCmAndZeroCm_shouldReturnTrue(){
-        QuantityMeasurement valueInCm1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,0);
-        QuantityMeasurement valueInCm2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,0);
-        Assert.assertEquals(valueInCm1,valueInCm2);
-    }
-
-    //Test for 0cm and 1 Cm
-    @Test
-    public void givenValuesAsZeroAndOneCm_whenCompare_shouldReturnFalse()
-    {
-        QuantityMeasurement cmValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
-        QuantityMeasurement cmValue2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,1.0);
-        Assert.assertNotEquals(cmValue1, cmValue2);
-    }
-
-    //Test For Null and Value
-    @Test
-    public void givenNullAndOneValueInCm_shouldReturnFalse(){
-        QuantityMeasurement valueInCm = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
-        valueInCm.equals(null);
-        Assert.assertFalse(false);
-    }
-
-    //Test for 0Cm and 0Inches
-    @Test
-    public void given0InchesAnd0Cm_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,0.0);
-        QuantityMeasurement valueInCm = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,0.0);
-        boolean check = valueInInches.checkCompare(valueInCm);
-        Assert.assertTrue(check);
-    }
-
-    //Test For 1cm and 1 Inches
-    @Test
-    public void given1CmAnd1Inches_whenCompare_shouldReturnFalse(){
-        QuantityMeasurement valueInInches = new QuantityMeasurement(AllUnitsToUse.UnitConverter.INCHES,1.0);
-        QuantityMeasurement valueInCm = new QuantityMeasurement(AllUnitsToUse.UnitConverter.CENTIMETER,1.0);
-        Assert.assertNotEquals(valueInCm,valueInInches);
-    }
-
+   
     //Test TO Compare that 2 in is 5 cm
     @Test
     public void given2InchesAnd5Cm_whenCompare_shouldEqualsTrue(){
@@ -220,16 +179,6 @@ public class QuantityMeasurementTest {
         double check = valueInFeet.addition(valueInInch);
         Assert.assertEquals(14,check,0);
     }
-
-    //Test For Adding 1 feet and 1 feet
-    @Test
-    public void givenOneFeetAndOneFeet_whenAdded_shouldReturn24Inches(){
-        QuantityMeasurement valueInFeet1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.00);
-        QuantityMeasurement valueInFeet2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FEET,1.00);
-        double check = valueInFeet1.addition(valueInFeet2);
-        Assert.assertEquals(24,check,0);
-    }
-
     //Test For Adding 2 inch and 2.5 centimeter
     @Test
     public void givenTwoInchesAndTwoAndHalfCmt_whenAdded_shouldReturn3Inches(){
@@ -238,74 +187,6 @@ public class QuantityMeasurementTest {
         double check = valueInCm.addition(valueInInch);
         Assert.assertEquals(3,check,0);
     }
-
-
-    //Test For Comparing 0 gallon is 0 gallon
-    @Test
-    public void given0GallonAnd0Gallon_whenCompare_shouldReturnEqual(){
-        QuantityMeasurement valueInGallon1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
-        QuantityMeasurement valueInGallon2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
-        Assert.assertEquals(valueInGallon1, valueInGallon2);
-    }
-
-    //Test For Compare 0 Gallon And 1 Gallon
-    @Test
-    public void given0GallonAnd1Gallon_whenCompare_shouldReturnFalse(){
-        QuantityMeasurement valueInGallon1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
-        QuantityMeasurement valueInGallon2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
-        Assert.assertNotEquals(valueInGallon1, valueInGallon2);
-    }
-
-    //Test For Null and Value
-    @Test
-    public void givenNullAndOneValueInGallon_shouldReturnFalse(){
-        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
-        valueInGallon.equals(null);
-        Assert.assertFalse(false);
-    }
-
-    //Test For Comparing 0 liters is 0 liters
-    @Test
-    public void given0LiterAnd0Liter_whenCompare_shouldReturnEqual(){
-        QuantityMeasurement valueInLiter1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
-        QuantityMeasurement valueInLiter2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
-        Assert.assertEquals(valueInLiter1, valueInLiter2);
-    }
-
-    //Test For Compare 0 Liter And 1 Liter
-    @Test
-    public void given0LiterAnd1Liter_whenCompare_shouldReturnFalse(){
-        QuantityMeasurement valueInLiter1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
-        QuantityMeasurement valueInLiter2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
-        Assert.assertNotEquals(valueInLiter1, valueInLiter2);
-    }
-
-    //Test For Null and Value
-    @Test
-    public void givenNullAndOneValueInLiter_shouldReturnFalse(){
-        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
-        valueInLiter.equals(null);
-        Assert.assertFalse(false);
-    }
-
-    //Test For Conversion Gallon to Liter
-    @Test
-    public void given0GallonAnd0Liter_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
-        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
-        boolean check = valueInLiter.checkCompare(valueInGallon);
-        Assert.assertTrue(check);
-    }
-
-    //Test For Conversion Gallon to Liter
-    @Test
-    public void given1GallonAnd1Liter_whenCompare_shouldReturnFalse(){
-        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
-        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
-        boolean check = valueInLiter.checkCompare(valueInGallon);
-        Assert.assertFalse(check);
-    }
-
     //Test For Conversion Gallon to Liter
     @Test
     public void given1GallonAnd3point78Liter_whenCompare_shouldReturnTrue(){
@@ -313,48 +194,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
         boolean check = valueInLiter.checkCompare(valueInGallon);
         Assert.assertTrue(check);
-    }
-
-    //Test For Compare 0 MiliLiter And 0 MiliLiter
-    @Test
-    public void given0MilliLiterAnd0MilliLiter_whenCompare_shouldReturnTue(){
-        QuantityMeasurement valueInMl1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
-        QuantityMeasurement valueInMl2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
-        Assert.assertEquals(valueInMl1, valueInMl2);
-    }
-
-    //Test For Compare 0 MiliLiter And 1 MiliLiter
-    @Test
-    public void given0MilliLiterAnd1MilliLiter_whenCompare_shouldReturnFalse(){
-        QuantityMeasurement valueInMl1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
-        QuantityMeasurement valueInMl2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,1.0);
-        Assert.assertNotEquals(valueInMl1, valueInMl2);
-    }
-
-    //Test For Null and Value
-    @Test
-    public void givenNullAndOneValueInMiliLiter_shouldReturnFalse(){
-        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
-        valueInLiter.equals(null);
-        Assert.assertFalse(false);
-    }
-
-    //Test For 0 Liter and 0 Mililiter
-    @Test
-    public void given0MililiterAnd0Liter_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
-        QuantityMeasurement valueInMl = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,0.0);
-        boolean check = valueInLiter.checkCompare(valueInMl);
-        Assert.assertTrue(check);
-    }
-
-    //Test For 1 Liter and 1 Mililiter
-    @Test
-    public void given1MililiterAnd1Liter_whenCompare_shouldReturnFalse(){
-        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,1.0);
-        QuantityMeasurement valueInMl = new QuantityMeasurement(AllUnitsToUse.UnitConverter.MILILITER,1.0);
-        boolean check = valueInLiter.checkCompare(valueInMl);
-        Assert.assertFalse(check);
     }
 
     //Test For 1 Liter and 1000 Mililiter
@@ -366,23 +205,6 @@ public class QuantityMeasurementTest {
         Assert.assertTrue(check);
     }
 
-    //Test for additon of 0 gallon and 0 liter
-    @Test
-    public void givenZeroGallonAndZeroLiter_whenAdded_shouldRetuenZero(){
-        QuantityMeasurement valueInLiter = new QuantityMeasurement(AllUnitsToUse.UnitConverter.LITER,0.0);
-        QuantityMeasurement valueInGallon = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,0.0);
-        double check = valueInGallon.addition(valueInLiter);
-        Assert.assertEquals(0,check,0);
-    }
-    //Test for addition of 1 gallon and 1 gallon
-    @Test
-    public void givenOneGallonAndOneGallon_whenAdded_shouldReturn3point79Liters(){
-        QuantityMeasurement valueInGallon1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
-        QuantityMeasurement valueInGallon2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
-        double check = valueInGallon1.addition(valueInGallon2);
-        Assert.assertEquals(7.57,check,0);
-    }
-
     //Test For Addition of 1 Liter and 1000 ml
     @Test
     public void givenOneLiterAnd1000Ml_whenAdded_shouldReturn2Liters(){
@@ -391,30 +213,7 @@ public class QuantityMeasurementTest {
         double check = valueInLiter.addition(valueInMl);
         Assert.assertEquals(2,check,0);
     }
-    //Test For 0 kg is equal to 0 kg
-    @Test
-    public void givenZeroKgAndZeroKg_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInKG1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
-        QuantityMeasurement valueInKG2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
-        Assert.assertEquals(valueInKG1,valueInKG2);
-    }
-
-    //Test For 0 kg is equal to 0 kg
-    @Test
-    public void givenOneKgAndZeroKg_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInKG1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,1.0);
-        QuantityMeasurement valueInKG2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0.0);
-        Assert.assertNotEquals(valueInKG1,valueInKG2);
-
-    //Test for addition of 1 gallon and 1 gallon
-    @Test
-    public void givenOneGallonAndOneGallon_whenAdded_shouldReturn3point79Liters(){
-        QuantityMeasurement valueInGallon1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
-        QuantityMeasurement valueInGallon2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GALLON,1.0);
-        double check = valueInGallon1.addition(valueInGallon2);
-        Assert.assertEquals(7.57,check,0);
-    }
-
+    
     //Test For Addition of 1 Liter and 1000 ml
     @Test
     public void givenOneLiterAnd1000Ml_whenAdded_shouldReturn2Liters(){
@@ -423,54 +222,6 @@ public class QuantityMeasurementTest {
         double check = valueInLiter.addition(valueInMl);
         Assert.assertEquals(2,check,0);
     }
-
-    //Test For Null and Value
-    @Test
-    public void givenNullAndOneValueInKg_shouldReturnFalse(){
-        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0.0);
-        quantityMeasurementValue1.equals(null);
-        Assert.assertFalse(false);
-    }
-
-    //Test For 0 gram is equal to 0 gram
-    @Test
-    public void givenZeroGramsAndZeroGrams_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInGram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
-        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
-        Assert.assertEquals(valueInGram1,valueInGram2);
-    }
-
-    //Test For 0 gram is equal to 1 gram
-    @Test
-    public void givenZeroGramsAndOneGrams_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInGram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
-        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,1);
-        Assert.assertNotEquals(valueInGram1,valueInGram2);
-    }
-    //Test For Null and Value
-    @Test
-    public void givenNullAndOneValueInGram_shouldReturnFalse(){
-        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0.0);
-        quantityMeasurementValue1.equals(null);
-        Assert.assertFalse(false);
-    }
-
-    //Test For 0Kg and 0Gram
-    @Test
-    public void givenZeroKgAndZeroGram_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInKilogram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,0);
-        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,0);
-        Assert.assertEquals(valueInKilogram1,valueInGram2);
-    }
-
-    //Test For 1Kg and 1Gram
-    @Test
-    public void givenOneKgAndOneGram_whenCompare_shouldReturnFalse(){
-        QuantityMeasurement valueInKilogram1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.KILOGRAM,1.0);
-        QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,1.0);
-        Assert.assertNotEquals(valueInKilogram1,valueInGram2);
-    }
-
     //Test For 1Kg is 1000grams
     @Test
     public void givenOneKgAnd1000Gram_whenCompare_shouldReturnTrue(){
@@ -478,30 +229,6 @@ public class QuantityMeasurementTest {
         QuantityMeasurement valueInGram2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.GRAM,1000.0);
         boolean check = valueInKilogram1.checkCompare(valueInGram2);
         Assert.assertTrue(check);
-    }
-
-    //Test For 0 Tonnes and 0Tones
-    @Test
-    public void givenZeroToneAndZeroTone_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInTonne = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
-        QuantityMeasurement valueInTonne2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
-        Assert.assertEquals(valueInTonne,valueInTonne2);
-    }
-
-    //Test For 1 Tonnes and 0 Tones
-    @Test
-    public void givenZeroToneAndOneTone_whenCompare_shouldReturnFalse(){
-        QuantityMeasurement valueInTonne = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,1);
-        QuantityMeasurement valueInTonne2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0);
-        Assert.assertNotEquals(valueInTonne,valueInTonne2);
-    }
-
-    //Test For Null and Value
-    @Test
-    public void givenNullAndOneValueInTonnes_shouldReturnFalse(){
-        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.TONNE,0.0);
-        quantityMeasurementValue1.equals(null);
-        Assert.assertFalse(false);
     }
 
     //Test For Addition  1 Tonnes And 1000 Gms
@@ -512,73 +239,6 @@ public class QuantityMeasurementTest {
         double check = valueInTonne.addition(valueInGrams);
         Assert.assertEquals(1001,check,0);
     }
-
-    //Test For Comparing 0 Degree with 0 Degree
-    @Test
-    public void given0DegreeAnd0Degree_whenCompare_shouldReturnEqual(){
-        QuantityMeasurement valueInDegree1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
-        QuantityMeasurement valueInDegree2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
-        Assert.assertEquals(valueInDegree1, valueInDegree2);
-    }
-
-    //Test For Comparing 0 Degree with 1 Degree
-    @Test
-    public void given0DegreeAnd1Degree_whenCompare_shouldReturnFalse(){
-        QuantityMeasurement valueInDegree1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
-        QuantityMeasurement valueInDegree2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,1.0);
-        Assert.assertNotEquals(valueInDegree1, valueInDegree2);
-    }
-
-    //Test For Null and Value
-    @Test
-    public void givenNullAndOneValueInDegree_shouldReturnFalse(){
-        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
-        quantityMeasurementValue1.equals(null);
-        Assert.assertFalse(false);
-    }
-
-    //Test For Comparing 0 FAHRENHEIT with 0 FAHRENHEIT
-    @Test
-    public void given0FahrenheitAnd0Fahrenheit_whenCompare_shouldReturnEqual(){
-        QuantityMeasurement valueInFahrenheit1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
-        QuantityMeasurement valueInFahrenheit2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
-        Assert.assertEquals(valueInFahrenheit1, valueInFahrenheit2);
-    }
-
-    //Test For Comparing 1 FAHRENHEIT with 0 FAHRENHEIT
-    @Test
-    public void given0FahrenheitAnd1Fahrenheit_whenCompare_shouldReturnEqual(){
-        QuantityMeasurement valueInFahrenheit1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
-        QuantityMeasurement valueInFahrenheit2 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,1.0);
-        Assert.assertNotEquals(valueInFahrenheit1, valueInFahrenheit2);
-    }
-
-    //Test For Null and Value
-    @Test
-    public void givenNullAndOneValueInFahrenheit_shouldReturnFalse(){
-        QuantityMeasurement quantityMeasurementValue1 = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
-        quantityMeasurementValue1.equals(null);
-        Assert.assertFalse(false);
-    }
-
-    //Test For 0 Degree and 0 Fahrenheit
-    @Test
-    public void givenValue0DegreeAnd0Fahrenheit_whenCompare_shouldReturnTrue(){
-        QuantityMeasurement valueInFahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,0.0);
-        QuantityMeasurement valueInDegree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
-        boolean check = valueInDegree.checkCompare(valueInFahrenheit);
-        Assert.assertTrue(check);
-    }
-
-    //Test For 0 Degree and 1 Fahrenheit
-    @Test
-    public void givenValue0DegreeAnd1Fahrenheit_whenCompare_shouldReturnFalse(){
-        QuantityMeasurement valueInFahrenheit = new QuantityMeasurement(AllUnitsToUse.UnitConverter.FAHRENHEIT,1.0);
-        QuantityMeasurement valueInDegree = new QuantityMeasurement(AllUnitsToUse.UnitConverter.DEGREE,0.0);
-        boolean check = valueInDegree.checkCompare(valueInFahrenheit);
-        Assert.assertFalse(check);
-    }
-
     //Test For 100 Degree and 212 Fahrenheit
     @Test
     public void givenValue100DegreeAnd212Fahrenheit_whenCompare_shouldReturnEqual(){
