@@ -251,16 +251,6 @@ public class QuantityMeasurementTest {
         double check = valueInInch1.addition(valueInInch2);
         Assert.assertEquals(4,check,0);
     }
-
-    //Test For Adding 1 feet and 2 inch
-    @Test
-    public void givenOneFeetAndTwoInch_whenAdded_shouldReturn14Inches(){
-        Length valueInFeet = new Length(AllUnitsToUse.UnitConverter.FEET,1.00);
-        Length valueInInch = new Length(AllUnitsToUse.UnitConverter.INCHES,2.00);
-        double check = valueInFeet.addition(valueInInch);
-        Assert.assertEquals(14,check,0);
-    }
-
     //Test For Adding 1 feet and 1 feet
     @Test
     public void givenOneFeetAndOneFeet_whenAdded_shouldReturn24Inches(){
